@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/ayushjain1144/anaconda3/bin/python
 import sys
 import math
 
