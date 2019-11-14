@@ -19,4 +19,4 @@ for lines in sys.stdin:
 			ssum += (float(attrs[i]) - float(test_vals[i]))**2
 	dist = math.sqrt(ssum)
 	
-	print(dist + ',' + attrs[-1])
+	print(f"{attrs[-1]}\t{dist}")
