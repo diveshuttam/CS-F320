@@ -1,16 +1,22 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import sys
 import math
 
-# inputval = [sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4]]
+test_vals = []
 
+# We give test data as arguments to mapper.
+for x in range(9):
+	# argv starts from 1.
+	test_vals.append(sys.argv[x+1])
+
+# We get training examples from STDIN, one by one.
 for lines in sys.stdin:
-	avg = 0.0
+	ssum = 0.0
 	lines = lines.strip()
-	features = lines.split(',')
-	for i in range(len(features)-1):
-		if features[i]!='':
-			avg += (float(features[i]) - float(inputval[i]))**2
-			dist = math.sqrt(avg)
-	features.append(str(dist))
-	print ','.join(features)
+	attrs = lines.split(',')
+	for i in range(len(attrs)-1):
+		if attrs[i]:
+			ssum += (float(attrs[i]) - float(test_vals[i]))**2
+	dist = math.sqrt(ssum)
+	
+	print(dist + ',' + attrs[-1])
