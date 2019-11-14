@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import subprocess
 
 OUTPUT_DIR = 'output_knn'
