@@ -2,6 +2,7 @@
 import sys
 import math
 
+# convert line to a keyvalue pair
 def map_line(line,testvals):
 	ssum = 0.0
 	line = line.strip()
