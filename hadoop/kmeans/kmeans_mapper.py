@@ -12,17 +12,16 @@ import math
 def getCentroids(fpath):
     centroids = []
 
-    for line in open(fpath).readlines:
+    for line in open(fpath).readlines():
         if line:
             centroids.append(list(map(float, line.strip().split(','))))
-
     return centroids
 
 def get_distance(x1, x2):
     """Returns Eucledian Distance"""
 
     assert(len(x1) == len(x2))
-
+    ssum = 0
     for i in range(len(x1)):
         if x1[i]:
             ssum += (float(x1[i]) - float(x2[i]))**2
@@ -45,20 +44,22 @@ def map_line(line, centroids):
 
         if current_distance < min_dist:
             min_dist = current_distance
-            idx = idx
+            idx = i
 
     data_tuple = (data_point, 1)
     # Returns index of centroid and the data point tuple (refer to the research paper in the readme of our github)
-    print(f"{idx}\t{data_tuple}")            
+    # print(f"{idx}\t{data_tuple}") 
+    print(f"{idx}\t{str(data_tuple)}")           
 
         
 
 
 def kmeans_mapper(fpath):
-
     centroids = getCentroids(fpath)
     for line in sys.stdin:
         map_line(line, centroids)
+
+kmeans_mapper("centroids.txt")        
 
 
 
