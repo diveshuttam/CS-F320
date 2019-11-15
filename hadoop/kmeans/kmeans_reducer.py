@@ -41,8 +41,8 @@ def kmeans_reducer():
     fp.close()
 
         
-    print(f"{' '.join(map(str,list1))}")
-    print(f"{' '.join(map(str,list2))}") 
+    print(list1)
+    print(list2) 
 
 
 def map_line(key, coord, count):

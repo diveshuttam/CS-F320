@@ -22,6 +22,8 @@ for i in range(k):
 
     # Remove extra line break.
     output_lines = out.split('\n')[:-1]
+    print(output_lines[0])
+
     cluster1=eval(output_lines[0])
     cluster2=eval(output_lines[1])
 
@@ -44,8 +46,8 @@ for i in range(k):
 
 
 
-    open(f"cluster{i}").write(new_centroids_str1)
-    open(f"cluster{i}_").write(new_centroids_str2)
+    open(f"cluster{i}", 'w').write(new_centroids_str1)
+    open(f"cluster{i}_", 'w').write(new_centroids_str2)
 
     # Open a file
     path = "."
