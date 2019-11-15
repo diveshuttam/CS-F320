@@ -1,11 +1,11 @@
-#!/usr/bin/env python3 
+#!/home/ayushjain1144/anaconda3/bin/python
 
 
 # Manage the fpath: file path of centroid
 
 import sys
 import math
-
+import random
 # take centroids from file passed in fpath
 # There would be a file in which we will keep updating centroids
 # This function just parses that
@@ -25,7 +25,7 @@ def get_distance(x1, x2):
     for i in range(len(x1)):
         if x1[i]:
             ssum += (float(x1[i]) - float(x2[i]))**2
-    dist = math.sqrt(ssum)   
+    dist = math.sqrt(ssum)
 
     return dist
 
@@ -48,10 +48,10 @@ def map_line(line, centroids):
 
     data_tuple = (data_point, 1)
     # Returns index of centroid and the data point tuple (refer to the research paper in the readme of our github)
-    # print(f"{idx}\t{data_tuple}") 
-    print(f"{idx}\t{str(data_tuple)}")           
+    # print(f"{idx}\t{data_tuple}")
+    print(f"{idx}\t{str(data_tuple)}")
 
-        
+
 
 
 def kmeans_mapper(fpath):

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/ayushjain1144/anaconda3/bin/python
 import subprocess
 import sys
 import os
@@ -29,16 +29,16 @@ for i in range(k):
 
     new_centroids_str1 = ''
 
-    for l1 in cluster1: 
-        
+    for l1 in cluster1:
+
         for c in l1:
             new_centroids_str1 += str(c) + ','
         new_centroids_str1 = new_centroids_str1[:-1] + '\n'
 
     new_centroids_str2 = ''
 
-    for l1 in cluster2: 
-        
+    for l1 in cluster2:
+
         for c in l1:
             new_centroids_str2 += str(c) + ','
         new_centroids_str2 = new_centroids_str2[:-1] + '\n'
@@ -52,7 +52,9 @@ for i in range(k):
     # Open a file
     path = "."
     dirs = os.listdir(path)
-    max_file = max(map(lambda x:(len(open(x).readlines),x) if('cluster' in x) else 0, dirs))[0]
+    max_file = max(map(lambda x:(len(open(x).readlines()),x) if('cluster' in x) else (0, 0), dirs))[1]
+    print(max_file)
+    points=open(max_file).readlines()[:2]
+    open('centroids.txt', 'w').write('\n'.join(points))
     copyfile(max_file, "test_data.csv")
     os.remove(max_file)
-    

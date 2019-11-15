@@ -1,3 +1,5 @@
+#!/home/ayushjain1144/anaconda3/bin/python
+
 import sys
 #import numpy
 list1 = []
@@ -8,7 +10,7 @@ count = 0
 new_coords = [[0] * 13, [0] * 13]
 new_count = [0, 0]
 # print(new_coords)
-  
+
 def div(arr, val):
     return list(map(lambda x: x/val, arr))
 
@@ -36,13 +38,13 @@ def kmeans_reducer():
         for c in new_c:
             new_centroids_str += str(c) + ','
         new_centroids_str = new_centroids_str[:-1] + '\n'
-        
+
     fp.write(new_centroids_str)
     fp.close()
 
-        
+
     print(list1)
-    print(list2) 
+    print(list2)
 
 
 def map_line(key, coord, count):
