@@ -59,11 +59,4 @@ def kmeans_mapper(fpath):
     for line in sys.stdin:
         map_line(line, centroids)
 
-kmeans_mapper("centroids.txt")        
-
-
-
-
-
-
- 
+kmeans_mapper("centroids.txt")
