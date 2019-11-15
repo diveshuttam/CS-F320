@@ -52,9 +52,11 @@ for i in range(k):
     # Open a file
     path = "."
     dirs = os.listdir(path)
-    max_file = max(map(lambda x:(len(open(x).readlines()),x) if('cluster' in x) else (0, 0), dirs))[1]
+    file_list = list(map(lambda x:(len(open(x).readlines()),x) if('cluster' in x) else (0, 0),dirs))
+    print(file_list)
+    max_file = max(file_list)[1]
     print(max_file)
     points=open(max_file).readlines()[:2]
-    open('centroids.txt', 'w').write('\n'.join(points))
+    open('centroids.txt', 'w').write(''.join(points))
     copyfile(max_file, "test_data.csv")
     os.remove(max_file)
